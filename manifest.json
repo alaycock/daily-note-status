@@ -3,7 +3,7 @@
 	"name": "Daily Note Status",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Shows an icon indicating whether the current note's filename matches today's date. Use <dailystatus /> in your notes.",
+	"description": "An icon indicating whether the current filename matches today's date. Use {{dailystatus}} in your notes.",
 	"author": "",
 	"authorUrl": "",
 	"isDesktopOnly": false
