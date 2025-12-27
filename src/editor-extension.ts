@@ -22,12 +22,12 @@ class StatusIconWidget extends WidgetType {
 }
 
 /**
- * Creates a CodeMirror 6 extension that replaces <dailystatus /> tags with icons
+ * Creates a CodeMirror 6 extension that replaces {{dailystatus}} tags with icons
  */
 export function createDailyStatusExtension(
 	getCurrentFile: () => TFile | null,
 ) {
-	const tagRegex = /<dailystatus\s*\/?>/g;
+	const tagRegex = /\{\{\s*dailystatus\s*\}\}/g;
 
 	return ViewPlugin.fromClass(
 		class {
@@ -55,7 +55,7 @@ export function createDailyStatusExtension(
 				const text = doc.toString();
 				const selection = view.state.selection;
 
-				// Find all <dailystatus /> tags
+				// Find all {{dailystatus}} tags
 				let match;
 				tagRegex.lastIndex = 0; // Reset regex
 				while ((match = tagRegex.exec(text)) !== null) {
