@@ -6,3 +6,17 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+.daily-status-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 2px;
+}
+
+.daily-status-icon.status-today {
+	color: var(--text-success, #4caf50);
+}
+
+.daily-status-icon.status-not-today {
+	color: var(--text-warning, #d97706);
+}

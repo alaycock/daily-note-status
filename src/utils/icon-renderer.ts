@@ -12,17 +12,12 @@ export function createStatusIcon(status: DailyStatus): HTMLElement {
 	if (status === "today") {
 		setIcon(iconEl, "check-circle");
 		iconEl.setAttribute("aria-label", "Today's note");
-		iconEl.style.color = "var(--text-success, #4caf50)";
+		iconEl.classList.add("status-today");
 	} else {
 		setIcon(iconEl, "calendar-x");
 		iconEl.setAttribute("aria-label", "Not today's note");
-		iconEl.style.color = "var(--text-warning, #d97706)";
+		iconEl.classList.add("status-not-today");
 	}
-	
-	// Add inline display style
-	iconEl.style.display = "inline-block";
-	iconEl.style.verticalAlign = "middle";
-	iconEl.style.margin = "0 2px";
 	
 	return iconEl;
 }
